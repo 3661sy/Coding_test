@@ -15,10 +15,8 @@ from .models import car, draft
 @authentication_classes((JSONWebTokenAuthentication, ))
 def add_car(request):
     payload = json.loads(request.body)
-    print(request.user)
     try:
         for data in payload['cars']:
-            print("ddddd")
             Car = car.objects.create(
                 user=request.user,
                 accident=data["accident"],
@@ -26,7 +24,6 @@ def add_car(request):
                 manufacturer=data["manufacturer"],
                 price=data["price"]
             )
-            print("dddd")
         return JsonResponse({'message': 'Success' }, safe=False, status=status.HTTP_201_CREATED)
     except ObjectDoesNotExist as e:
         return JsonResponse({'error': str(e)}, safe=False, status=status.HTTP_404_NOT_FOUND)
