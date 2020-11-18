@@ -27,7 +27,7 @@ python .\manage.py runserver
 ```
 
 ## 2. Code📑
-```
+```python
 ###views.py
 @api_view(["POST"])
 @permission_classes((IsAuthenticated, ))
@@ -57,7 +57,7 @@ def add_car(request):
 ```
 `Decorator`을 사용해 사용자의 접근과 JWT를 가지고 있는지 확인합니다. 
 
-```
+```python
 #setting.py
 
 JWT_AUTH = {
