@@ -1,4 +1,4 @@
-# Coding_test
+# Used_car-API
 ## 0. Tech Stack💻
 
 이 프로젝트는 Django와 djangorestframework를 사용했습니다.
